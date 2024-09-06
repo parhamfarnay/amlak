@@ -1,5 +1,6 @@
+import DashboardPage from "@/template/DashboardPage";
 async function Dashboard() {
-  return <div>dashboard</div>;
+  return <DashboardPage />;
 }
 
 export default Dashboard;
