@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { Toaster, toast } from "react-hot-toast";
-import Loader from "@/module/Loader";
 import styles from "@/template/SignupPage.module.css";
 
 function SigninPage() {
@@ -48,7 +47,7 @@ function SigninPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
         {loading ? (
-          <Loader />
+          <Toaster />
         ) : (
           <button type="submit" onClick={signinHandler}>
             ثبت نام
