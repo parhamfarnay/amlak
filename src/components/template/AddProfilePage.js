@@ -23,8 +23,47 @@ function AddProfilePage({ data }) {
     rules: [],
     amenities: [],
   });
+  const [loading, setLoading] = useState(false);
 
-  const submitHandler = () => {};
+  useEffect(() => {
+    if (data) setProfileData(data);
+  }, []);
+
+  const router = useRouter();
+
+  const submitHandler = async () => {
+    setLoading(true);
+    const res = await fetch("/api/profile", {
+      method: "POST",
+      body: JSON.stringify(profileData),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    setLoading(false);
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(data.message);
+      router.refresh();
+    }
+  };
+
+  const editHandler = async () => {
+    setLoading(true);
+    const res = await fetch("/api/profile", {
+      method: "PATCH",
+      body: JSON.stringify(profileData),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    setLoading(false);
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(data.message);
+      router.refresh();
+    }
+  };
 
   return (
     <div className={styles.container}>
