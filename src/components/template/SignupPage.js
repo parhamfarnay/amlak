@@ -3,8 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
-import { threeDots } from "react-loader-spinner";
 import styles from "@/template/SignupPage.module.css";
+import Loader from "@/module/Loader";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
