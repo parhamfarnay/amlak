@@ -6,8 +6,6 @@ import { e2p, sp } from "@/utils/replaceNumber";
 import ItemList from "@/module/ItemList";
 import Title from "@/module/Title";
 import ShareButton from "@/module/ShareButton";
-import { icons } from "@/constants/icons";
-import { categories } from "@/constants/strings";
 import styles from "@/template/DetailsPage.module.css";
 
 function DetailsPage({
@@ -24,6 +22,18 @@ function DetailsPage({
     constructionDate,
   },
 }) {
+  const categories = {
+    apartment: "آپارتمان",
+    villa: "ویلا",
+    store: "مغازه",
+    office: "دفتر",
+  };
+  const icons = {
+    villa: <RiHome3Line />,
+    apartment: <MdApartment />,
+    store: <BiStore />,
+    office: <GiOfficeChair />,
+  };
   return (
     <div className={styles.container}>
       <div className={styles.main}>

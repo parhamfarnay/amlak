@@ -1,9 +1,14 @@
 import Link from "next/link";
 import { HiFilter } from "react-icons/hi";
-import { categories } from "@/constants/strings";
 import styles from "@/module/Sidebar.module.css";
 
 function Sidebar() {
+  const categories = {
+    apartment: "آپارتمان",
+    villa: "ویلا",
+    store: "مغازه",
+    office: "دفتر",
+  };
   return (
     <div className={styles.container}>
       <p>

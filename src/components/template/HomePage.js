@@ -1,10 +1,26 @@
 import { FiCircle } from "react-icons/fi";
 import { FaCity } from "react-icons/fa";
 import CategoryCard from "@/module/CategoryCard";
-import { categories, cities, services } from "@/constants/strings";
 import styles from "@/template/HomePage.module.css";
 
 function HomePage() {
+  const categories = {
+    apartment: "آپارتمان",
+    villa: "ویلا",
+    store: "مغازه",
+    office: "دفتر",
+  };
+  const services = ["خرید", "فروش", "رهن", "اجاره"];
+  const cities = [
+    "تهران",
+    "سنندج",
+    "کرمانشاه",
+    "اهواز",
+    "مشهد",
+    "اصفهان",
+    "شیراز",
+    "خرم آباد",
+  ];
   return (
     <div>
       <div className={styles.banner}>
